@@ -47,7 +47,7 @@ class FrontController extends Controller
     {
         $data['banners'] = Banner::with(['image'])->where('position', 1)->get();
         // $data['reviews'] = Review::query()->with(['image'])->orderBy('id', 'desc')->get();
-        // $data['smallBanner'] = Banner::with(['image'])->where('position', 2)->orderBy('id', 'desc')->first();
+        $data['smallBanners'] = Banner::with(['image'])->where('position', 2)->orderBy('id', 'desc')->limit(4)->get();
         // $data['partners'] = Partner::with(['image'])->limit(3)->get();
         // $data['newProducts'] = Product::with(['image'])->where('status', 1)->limit(6)->orderBy('id', 'DESC')->inRandomOrder()->get();
         $data['categorySpecialPost'] = CategorySpecial::query()->with([
@@ -101,16 +101,16 @@ class FrontController extends Controller
             ])
             ->first();
 
-        $productCategories = Category::query()->with([
-            'childs' => function ($q) {
-                $q->with([
-                    'childs'
-                ]);
-            }
-        ])
-        ->where('show_home_page', 1)
-        ->orderBy('sort_order')
-        ->get();
+        // $productCategories = Category::query()->with([
+        //     'childs' => function ($q) {
+        //         $q->with([
+        //             'childs'
+        //         ]);
+        //     }
+        // ])
+        // ->where('show_home_page', 1)
+        // ->orderBy('sort_order')
+        // ->get();
         // foreach ($productCategories as $category) {
         //     $category_parent_id = $category->parent ? $category->parent->id : null;
         //     $arr_category_id = array_merge($category->childs->pluck('id')->toArray(), [$category->id, $category_parent_id]);
@@ -121,7 +121,7 @@ class FrontController extends Controller
         //     }
         //     $category->products = Product::query()->where('status', 1)->whereIn('cate_id', $arr_category_id)->inRandomOrder()->limit(12)->select(['id', 'name', 'slug', 'price', 'base_price', 'unit_id', 'cate_id'])->get();
         // }
-        $data['productCategories'] = $productCategories;
+        // $data['productCategories'] = $productCategories;
 
         // $data['vouchers'] = Voucher::query()->where('status', 1)->where('quantity', '>', 0)->where('to_date', '>=', now())->orderBy('created_at', 'desc')->get();
         // block khối ảnh cuối trang

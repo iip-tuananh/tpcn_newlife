@@ -138,14 +138,14 @@
             <div class="row align-items-center">
                 <div class="col-md-12 col-12">
                     <div class="service-sec">
-                        @foreach ($productCategories as $category)
+                        @foreach ($smallBanners as $banner)
                             <div class="item">
                                 <div class="icon">
-                                    <a href="{{ route('front.show-product-category', ['categorySlug' => $category->slug]) }}"
-                                        title="{{ $category->name }}">
+                                    <a href="{{ $banner->link }}"
+                                        title="{{ $banner->name }}">
                                         <img width="100%" class="lazyload" src="/site/images/lazy.png"
-                                            data-src="{{ $category->image ? $category->image->path : 'https://placehold.co/600x300' }}"
-                                            alt="{{ $category->name }}" />
+                                            data-src="{{ $banner->image ? $banner->image->path : 'https://placehold.co/600x300' }}"
+                                            alt="{{ $banner->name }}" />
                                     </a>
                                 </div>
                             </div>
