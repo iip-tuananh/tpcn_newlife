@@ -118,47 +118,11 @@
                             <button class="btn btn-default" type="submit" aria-label="Tìm kiếm" title="Tìm kiếm">
                                 Tìm kiếm
                             </button>
-                            {{-- <div class="search-suggest">
-                                <div class="list-search list-search-style">
-                                </div>
-                                <div class="list-search2 list-search-style">
-                                </div>
-                            </div> --}}
                         </form>
                     </div>
                 </div>
                 <div class="col-lg-3 col-6 header-control">
                     <ul class="ul-control">
-                        {{-- <li class="header-lang d-lg-block d-none" id="box-lang-desktop">
-                            <a href="javascript:;" class="ae-icon">
-                                <img class="ae-flag"
-                                    src="//bizweb.dktcdn.net/100/496/216/themes/921741/assets/vn.png?1743048451127"
-                                    alt="multilangauge">
-                            </a>
-                            <ul class="drop-account">
-                                <li data-lang="vi" title="Tiếng Việt" class="ae-item-lang ae-active"><a
-                                        href="#"><img class="ae-icon-left"
-                                            src="//bizweb.dktcdn.net/100/496/216/themes/921741/assets/vn.png?1743048451127"
-                                            alt="ap multilangauge"><span>Tiếng Việt</span></a></li>
-                                <li data-lang="us" title="English" class="ae-item-lang"><a href="#"><img
-                                            class="ae-icon-left"
-                                            src="//bizweb.dktcdn.net/100/496/216/themes/921741/assets/en.png?1743048451127"
-                                            alt="ap multilangauge"><span>English</span></a></li>
-                            </ul>
-                        </li>
-                        <li class="header-store d-lg-block d-none">
-                            <a href="/account" title="Tài khoản">
-                                <img src="//bizweb.dktcdn.net/100/496/216/themes/921741/assets/user-icon.png?1743048451127"
-                                    alt="" width="24" height="24">
-                            </a>
-                        </li>
-                        <li class="header-wish">
-                            <a href="/san-pham-yeu-thich" class="wishlist_header" title="Sản phẩm yêu thích">
-                                <img src="//bizweb.dktcdn.net/100/496/216/themes/921741/assets/wish-icon.png?1743048451127"
-                                    alt="" width="24" height="24">
-                                <span class="headerWishlistCount count-item">0</span>
-                            </a>
-                        </li> --}}
                         <li class="header-cart block-cart">
                             <a href="/cart" class="icon" aria-label="Giỏ hàng" title="Giỏ hàng">
                                 <img src="/site/images/shopping-cart.png"
@@ -324,17 +288,13 @@
                                     Liên hệ
                                 </a>
                             </li>
+                            <li class="nav-item ">
+                                <a class="a-img" href="{{ route('front.connect-us') }}" title="Đăng ký CTV">
+                                    Đăng ký CTV
+                                </a>
+                            </li>
                         </ul>
                     </nav>
-                    {{-- @if ($categorySpecialFlashsale)
-                    <div class="flash-scroll">
-                        <a href="{{ route('front.show-product-category', ['categorySlug' => $categorySpecialFlashsale->slug]) }}" class="scroll-down">
-                            <img width="12"
-                                src="/site/images/menu_icon_3.png"
-                                alt="{{$categorySpecialFlashsale->name}}"> {{$categorySpecialFlashsale->name}}
-                        </a>
-                    </div>
-                    @endif --}}
                     <div class="control-menu">
                         <a href="#" id="prev">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
