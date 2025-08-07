@@ -73,8 +73,8 @@
                     <input class="form-control" ng-model="form.tax_code" type="text">
                 </div>
 				<div class="form-group custom-group">
-					<label class="form-label required-label">Email</label>
-					<input class="form-control" ng-model="form.email" type="text">
+					<label class="form-label required-label">Email (nhập nhiều email cách nhau bởi dấu xuống dòng)</label>
+					<textarea class="form-control" ng-model="form.email" rows="3"></textarea>
 					<span class="invalid-feedback d-block" role="alert">
 						<strong><% errors.email[0] %></strong>
 					</span>
