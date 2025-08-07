@@ -45,18 +45,22 @@ class ConfigController extends Controller
 		$request->merge([
             'zalo_chat' => json_decode($request->zalo_chat, true)
         ]);
-        $request->merge([
-            'email' => explode("\n", $request->email)
-        ]);
 
+        if ($request->email) {
+            $emails = explode("\n", $request->email);
+            $emails = array_map('trim', $emails);
+            $request->merge([
+                'emails' => $emails
+            ]);
+        }
 		$validate = Validator::make(
 			$request->all(),
 			[
 				'web_title' => 'required|max:255',
 				'hotline' => 'required',
 				'zalo' => 'required',
-				'email' => 'required',
-                'email.*' => 'email',
+				'emails' => 'required',
+                'emails.*' => 'email',
 				'facebook' => 'nullable|max:255',
 				'image' => 'nullable|file|mimes:jpg,jpeg,png|max:3000',
                 'favicon' => 'nullable|file|mimes:jpg,jpeg,png|max:3000',
