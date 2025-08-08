@@ -123,6 +123,19 @@
                 </div>
                 <div class="col-lg-3 col-6 header-control">
                     <ul class="ul-control">
+                        <li class="header-store d-lg-block d-none">
+                            @if (Auth::guard('client')->check())
+                            <a href="javascript:void(0)" title="Tài khoản">
+                                <img src="/site/images/user-icon.png" alt="" width="24" height="24">
+                                <span class="title">Xin chào, {{Auth::guard('client')->user()->name}}</span>
+                            </a>
+                            @else
+                            <a href="{{ route('front.login-client') }}" title="Đăng ký/Đăng nhập">
+                                <img src="/site/images/user-icon.png" alt="" width="24" height="24">
+                                <span class="title">Đăng ký/Đăng nhập</span>
+                            </a>
+                            @endif
+                        </li>
                         <li class="header-cart block-cart">
                             <a href="/cart" class="icon" aria-label="Giỏ hàng" title="Giỏ hàng">
                                 <img src="/site/images/shopping-cart.png"
@@ -215,8 +228,20 @@
                     <nav class="header-nav">
                         <div class="user-menu d-lg-none">
                             <div class="user-icon">
-                                <img src="{{ $config->image ? $config->image->path : 'https://placehold.co/100x100' }}" alt="{{ $config->web_title }}" loading="lazy">
+                                {{-- <img src="{{ $config->image ? $config->image->path : 'https://placehold.co/100x100' }}" alt="{{ $config->web_title }}" loading="lazy"> --}}
+                                <img src="/site/images/icon-user.png" alt="">
                             </div>
+                            @if (Auth::guard('client')->check())
+                            <div class="user-account">
+                                <a class="btnx" href="javascript:void(0)">Xin chào, {{Auth::guard('client')->user()->name}}</a>
+                                <small><a href="{{ route('front.logout-client') }}">Đăng xuất</a></small>
+                            </div>
+                            @else
+                            <div class="user-account">
+                                <a class="btnx" href="{{ route('front.login-client') }}">Đăng nhập</a>
+                                <small><a href="{{ route('front.login-client') }}?register=true">Đăng ký</a></small>
+                            </div>
+                            @endif
                         </div>
                         <ul class="item_big">
                             <li class="nav-item active ">

@@ -9,12 +9,12 @@
     {{ url('' . $banners[0]->image->path) }}
 @endsection
 @section('css')
+    <link href="/site/css/breadcrumb_style.scss.css?1743048451127" rel="stylesheet" type="text/css" media="all" />
+    <link href="/site/css/account_oder_style.scss.css?1743048451127" rel="stylesheet" type="text/css" media="all" />
     <style>
         .page-login {
-            padding: 30px;
             background-color: #fff;
             border-radius: 10px;
-            font-family: 'Poppins', sans-serif;
             font-size: 16px;
             line-height: 24px;
         }
@@ -56,8 +56,21 @@
 @endsection
 @section('content')
     <div ng-controller="LoginClientController" ng-cloak>
-        <section
-            style="padding: 80px 0; background: linear-gradient(0deg, rgba(0,0,0,0), rgba(0,0,0,0)),  url(/site/images/bg_footer.jpg?1721988795194) center no-repeat;">
+        <section class="bread-crumb">
+            <div class="container">
+                <ul class="breadcrumb">
+                    <li class="home">
+                        <a href="{{ route('front.home-page') }}" title="Trang chủ">
+                            <span>Trang chủ</span>
+                        </a>
+                    </li>
+                    <li>
+                        <strong><% title %></strong>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <section>
             <div class="container">
                 <div class="wrap_background_aside page_login">
                     <div class="row">
@@ -67,6 +80,7 @@
                                 <div class="page-login pagecustome clearfix">
                                     <div class="wpx" style="margin-bottom: 0">
                                         <h1 class="title_heads a-center"><span>Đăng nhập</span></h1>
+                                        <span class="block a-center dkm margin-top-10">Nếu bạn chưa có tài khoản, <a href="javascript:void(0)" ng-click="showFormRegister()" class="btn-link-style btn-register">đăng ký tại đây</a></span>
                                         <div id="login" class="section">
                                             <form id="customer_login">
                                                 <div class="form-signup clearfix">
@@ -86,19 +100,15 @@
                                                     </div>
                                                     <div class="btn_boz_khac">
                                                         <div class="btn_khac">
-                                                            <span class="quenmk"
-                                                                style="font-size: 16px; line-height: 24px; cursor: pointer; float: left;"
-                                                                ng-click="showFormRecoverPassword()">Quên mật khẩu?</span>
-                                                            <a href="javascript:void(0)" ng-click="showFormRegister()"
-                                                                class="btn-link-style btn-register"
-                                                                style="font-size: 16px; line-height: 24px; float: right;"
-                                                                title="Đăng ký tại đây">Đăng ký tại đây</a>
+                                                            <div class="quenmk"
+                                                                style="font-size: 16px; line-height: 24px; cursor: pointer; text-align: center;"
+                                                                ng-click="showFormRecoverPassword()">Quên mật khẩu?</div>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </form>
                                         </div>
-                                        <div class="h_recover" ng-show="formRecoverPassword" style="margin-top: 20px;">
+                                        <div class="h_recover" ng-show="formRecoverPassword">
                                             <div id="recover-password" class="form-signup">
                                                 <form id="recover_customer_password">
                                                     <div class="form-signup"
@@ -147,8 +157,9 @@
                                                         <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
                                                             <fieldset class="form-group" style="margin-bottom: 12px">
                                                                 <input type="text" class="form-control form-control-lg"
-                                                                    style="margin-bottom: 0;" value="" name="name"
-                                                                    id="name" placeholder="Họ và tên" required>
+                                                                    style="margin-bottom: 0;" value=""
+                                                                    name="name" id="name" placeholder="Họ và tên"
+                                                                    required>
                                                                 <span class="invalid-feedback d-block error"
                                                                     style="text-align: left;" role="alert"
                                                                     ng-if="errors && errors['name']">

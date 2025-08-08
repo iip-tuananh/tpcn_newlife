@@ -409,7 +409,7 @@ button.close {
 #header .header-control .ul-control .header-store a {
     display: flex;
     height: 40px;
-    width: 40px;
+    padding: 12px;
     background: var(--mainColor);
     align-items: center;
     justify-content: center;
@@ -534,6 +534,10 @@ button.close {
 #header .header-control .ul-control .header-cart .icon .title {
     color: #fff;
     margin-right: 5px
+}
+
+#header .header-control .ul-control .header-store .title {
+    color: #fff;
 }
 
 @media (max-width: 767px) {
@@ -913,7 +917,7 @@ button.close {
 .backtop {
     position: fixed;
     top: auto !important;
-    bottom: 140px;
+    bottom: 200px;
     right: 17px;
     background: var(--mainColor);
     height: 35px;
@@ -1678,7 +1682,7 @@ button.close {
         padding: 10px 15px;
         display: flex;
         align-items: center;
-        background-color: #eee;
+        background-color: #1e4194;
         margin-bottom: 5px
     }
 
@@ -1687,7 +1691,7 @@ button.close {
     }
 
     .header-nav .user-menu .user-icon img {
-        width: 200px;
+        width: 25px;
     }
 
     .header-nav .user-menu .user-account a {
@@ -3389,7 +3393,7 @@ ul.tabs li.current {
     display: inline-block;
     position: fixed;
     top: auto !important;
-    bottom: 20px;
+    bottom: 80px;
     right: 10px;
     z-index: 990
 }
@@ -3401,12 +3405,24 @@ ul.tabs li.current {
 
 .call-hotline {
     position: fixed;
-    bottom: 80px;
+    bottom: 140px;
     right: 10px;
     z-index: 990;
 }
 
 .call-hotline svg {
+    width: 48px;
+    height: 48px;
+}
+
+.chat-mail {
+    position: fixed;
+    bottom: 20px;
+    right: 10px;
+    z-index: 990;
+}
+
+.chat-mail svg {
     width: 48px;
     height: 48px;
 }
