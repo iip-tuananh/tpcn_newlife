@@ -18,8 +18,8 @@
     <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column nav-legacy nav-flat" data-widget="treeview" role="menu"
             data-accordion="false">
-            <li class="nav-item has-treeview menu-open">
-                <a href="#" class="nav-link active">
+            <li class="nav-item has-treeview">
+                <a href="{{ route('dash') }}" class="nav-link {{ Request::routeIs('dash') ? 'active' : '' }}">
                     <i class="nav-icon fas fa-tachometer-alt"></i>
                     <p>
                         Trang chủ
