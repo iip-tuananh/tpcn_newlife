@@ -9,6 +9,7 @@ use App\Model\Admin\PostCategory;
 use Illuminate\View\View;
 use Illuminate\Support\Facades\Auth;
 use App\Model\Admin\OrderRevenueDetail;
+use App\Model\Admin\Policy;
 
 class MenuHomePageComposer
 {
