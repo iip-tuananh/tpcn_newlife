@@ -45,6 +45,7 @@ Quản lý chính sách
             {data: 'DT_RowIndex', orderable: false, title: "STT", className: "text-center"},
             {data: 'title', title: 'Tiêu đề'},
             {data: 'status', title: 'Trạng thái'},
+            {data: 'is_menu', title: 'Hiển thị trên menu'},
             {data: 'updated_at', title: 'Ngày cập nhật'},
             {data: 'updated_by', title: 'Người cập nhật'},
             {data: 'action', orderable: false, title: "Hành động"}

@@ -318,6 +318,13 @@
                                     Đăng ký CTV
                                 </a>
                             </li>
+                            @foreach ($policies as $policy)
+                            <li class="nav-item ">
+                                <a class="a-img" href="{{ route('front.policy-detail', ['slug' => $policy->slug]) }}" title="{{$policy->title}}">
+                                    {{$policy->title}}
+                                </a>
+                            </li>
+                            @endforeach
                         </ul>
                     </nav>
                     <div class="control-menu">

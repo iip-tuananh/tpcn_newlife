@@ -14,6 +14,7 @@
                 title: this.title,
                 status: this.status,
                 content: this.content,
+                is_menu: this.is_menu,
             }
 
             data = jsonToFormData(data);

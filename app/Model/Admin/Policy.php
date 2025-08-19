@@ -39,4 +39,9 @@ class Policy extends BaseModel
     {
         return self::where('id', $id)->firstOrFail();
     }
+
+    public function canDelete()
+    {
+        return true;
+    }
 }

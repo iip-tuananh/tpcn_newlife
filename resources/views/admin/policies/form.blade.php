@@ -41,6 +41,19 @@
                         </div>
                     </div>
 
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label class="form-label">Hiển thị trên menu</label>
+                            <select class="form-control" ng-model="form.is_menu">
+                                <option ng-value="1" ng-selected="1 == form.is_menu">Hiển thị</option>
+                                <option ng-value="0" ng-selected="0 == form.is_menu">Không hiển thị</option>
+
+                            </select>
+                            <span class="invalid-feedback d-block" role="alert">
+				        <strong><% errors.status[0] %></strong>
+			        </span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

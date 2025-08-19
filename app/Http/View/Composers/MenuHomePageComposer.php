@@ -57,6 +57,8 @@ class MenuHomePageComposer
 
         $postCategories = PostCategory::query()->where(['parent_id' => 0, 'show_home_page' => 1])->latest()->get();
 
-        $view->with(['productCategories' => $productCategories, 'postCategories' => $postCategories, 'categorySpecialFlashsale' => $categorySpecialFlashsale]);
+        $policies = Policy::query()->where('is_menu', 1)->where('status', 1)->latest()->get();
+
+        $view->with(['productCategories' => $productCategories, 'postCategories' => $postCategories, 'categorySpecialFlashsale' => $categorySpecialFlashsale, 'policies' => $policies]);
     }
 }

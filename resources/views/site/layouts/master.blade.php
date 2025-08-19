@@ -677,6 +677,7 @@
 
             .addThis_iconContact,
             .livechat-mes,
+            .livechat-zalo,
             .chat-mail,
             .call-hotline {
                 display: none !important;
@@ -764,7 +765,7 @@
             </defs>
         </svg>
     </a>
-    <a target="_blank" class="livechat-mes" href="https://zalo.me/{{ str_replace(' ', '', $config->zalo) }}">
+    <a target="_blank" class="livechat-zalo" href="https://zalo.me/{{ str_replace(' ', '', $config->zalo) }}">
         <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
             <circle cx="22" cy="22" r="22" fill="url(#paint4_linear)" />
             <g clip-path="url(#clip0)">
@@ -807,6 +808,9 @@
                 </linearGradient>
             </defs>
         </svg>
+    </a>
+    <a target="_blank" class="livechat-mes" href="{{ $config->facebook }}">
+        <img src="/site/images/messenger.svg?1749877282061" alt="Messenger" width="48" height="48">
     </a>
 </body>
 
